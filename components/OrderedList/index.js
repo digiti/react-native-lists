@@ -27,7 +27,6 @@ class OrderedList extends Component {
 
   getBulletElement = idx => {
     const { type, level } = this.props;
-    idx += 1;
     let formattedIdx;
 
     switch (type) {

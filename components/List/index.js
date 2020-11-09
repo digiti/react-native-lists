@@ -27,13 +27,17 @@ class List extends Component {
       children = [children];
     }
 
+    let index = 0;
+
     return (
       <View style={this.props.customStyle}>
         {children.map((child, idx) => {
           if (child.type == ListItem) {
+            index++;
+
             return (
               <View style={[styles.listItemContainer, styles[alignBullets]]}>
-                <View style={[styles.bullet]}>{getBulletElement(idx)}</View>
+                <View style={[styles.bullet]}>{getBulletElement(index)}</View>
                 {child}
               </View>
             );

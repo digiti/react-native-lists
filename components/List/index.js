@@ -36,15 +36,15 @@ class List extends Component {
             index++;
 
             return (
-              <View style={[styles.listItemContainer, styles[alignBullets]]}>
-                <View style={[styles.bullet]}>{getBulletElement(index)}</View>
+              <View key={index.toString()} style={[styles.listItemContainer, styles[alignBullets]]}>
+                <View style={[styles.bullet]} key={'bullet'}>{getBulletElement(index)}</View>
                 {child}
               </View>
             );
           }
 
           return (
-            <View style={styles.childContainer}>
+            <View key={index.toString()} style={styles.childContainer}>
               {React.cloneElement(child, {
                 level: level + 1,
               })}

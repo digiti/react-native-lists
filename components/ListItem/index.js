@@ -4,7 +4,6 @@ import { View, Text } from 'react-native';
 
 class ListItem extends Component {
   static propTypes = {
-    children: PropTypes.array | PropTypes.element,
     customStyle: PropTypes.object,
   };
 

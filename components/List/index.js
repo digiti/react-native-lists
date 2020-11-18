@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import ListItem from '../ListItem';
 import styles from './styles';
+import {v4 as uuidv4} from 'uuid';
 
 class List extends Component {
   static propTypes = {
@@ -32,11 +33,13 @@ class List extends Component {
     return (
       <View style={this.props.customStyle}>
         {children.map((child, idx) => {
+          const key = uuidv4();
+
           if (child.type == ListItem) {
             index++;
 
             return (
-              <View key={index.toString()} style={[styles.listItemContainer, styles[alignBullets]]}>
+              <View key={key} style={[styles.listItemContainer, styles[alignBullets]]}>
                 <View style={[styles.bullet]} key={'bullet'}>{getBulletElement(index)}</View>
                 {child}
               </View>
@@ -44,7 +47,7 @@ class List extends Component {
           }
 
           return (
-            <View key={index.toString()} style={styles.childContainer}>
+            <View key={key} style={styles.childContainer}>
               {React.cloneElement(child, {
                 level: level + 1,
               })}

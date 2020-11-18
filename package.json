@@ -12,5 +12,8 @@
     "prop-types": "*",
     "react": "*",
     "react-native": "*"
+  },
+  "dependencies": {
+    "uuid": "^8.3.1"
   }
 }

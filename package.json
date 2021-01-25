@@ -10,7 +10,7 @@
   },
   "peerDependencies": {
     "prop-types": "*",
-    "react": "16.12.0",
+    "react": "16.11.0",
     "react-native": "0.62.2"
   },
   "dependencies": {
